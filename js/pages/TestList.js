@@ -37,7 +37,7 @@ export default class TestList extends Component {
   render() {
     let {Heading}=this.props;
     return(
-        <View style={[Styles.Center, Styles.WidthUseWindowthree, {height: 50, marginTop: 10}]}>
+        <View style={[Styles.Center, Styles.WidthUseWindowThree, {height: 50, marginTop: 10}]}>
           <Text>{Heading}</Text>
         </View>
     );

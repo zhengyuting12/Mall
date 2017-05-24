@@ -29,13 +29,11 @@ export const ShopCartList = [
   {
     name: "Item1",
     price: 12.6,
-    quantity:1,
-
+    quantity:1
   },
   {
     name: "Item2",
     price: 12.6,
-    quantity:1,
-
+    quantity:1
   }
-]
+];

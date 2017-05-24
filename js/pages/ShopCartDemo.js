@@ -24,7 +24,7 @@
 
 "use strict";
 
-import React, { Component, PropTypes } from 'react'
+import React, {Component, PropTypes} from 'react'
 import {
   View,
   TouchableOpacity,
@@ -37,16 +37,16 @@ import {add, reduce} from "../actions";
 
 class ShopCartDemo extends Component {
   render() {
-    const { count } = this.props;
+    const {count} = this.props;
     return (
       <View style={{...Styles.Row, ...styles.margin}}>
-          <TouchableOpacity
-            onPress={() => this.reduce(count)}>
-            <Text>-</Text>
-          </TouchableOpacity>
-          <View>
-            <Text>{count}</Text>
-          </View>
+        <TouchableOpacity
+          onPress={() => this.reduce(count)}>
+          <Text>-</Text>
+        </TouchableOpacity>
+        <View>
+          <Text>{count}</Text>
+        </View>
         <TouchableOpacity
           onPress={() => this.add(count)}>
           <Text>+</Text>
@@ -61,7 +61,7 @@ class ShopCartDemo extends Component {
 
   reduce = (c) => {
     this.props.dispatch(reduce(c));
-  };
+  }
 }
 
 const styles = {

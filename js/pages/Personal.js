@@ -34,6 +34,7 @@ import {
   ListView,
   ScrollView
 } from "react-native";
+
 import {
   Left
 }from "native-base"
@@ -46,22 +47,19 @@ const datas = [
   {images: require("../../images/product.png")},
   {images: require("../../images/product.png")}];
 
-
 export default class ShopHome extends Component {
   constructor(props) {
     super(props);
-    var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
       dataSource: ds.cloneWithRows(datas)
     }
   }
 
-
   render() {
-
     return (
       <ScrollView style={{height:600}}>
-        <View style={[{height: 50, backgroundColor: "#ffd66f",marginTop: 20}, Styles.WidthUseWindow, Styles.Row]}>
+        <View style={[styles.header, Styles.WidthUseWindow, Styles.Row]}>
           <Left>
             <View style={[Styles.Row, {alignItems: "center"}]}>
               <Icon name="ios-arrow-back" size={30} style={{marginLeft: 10, marginRight: 10}} />
@@ -139,7 +137,7 @@ export default class ShopHome extends Component {
         </View>
       </TouchableOpacity>
     );
-  }
+  };
 
   tabItemRender(title, tab) {
 
@@ -169,3 +167,11 @@ export default class ShopHome extends Component {
     );
   }
 }
+
+const styles = {
+  header: {
+    height: 50,
+    backgroundColor: "#ffd66f",
+    marginTop: 20
+  }
+};

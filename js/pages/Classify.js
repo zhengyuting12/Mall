@@ -35,14 +35,12 @@ import {
   ScrollView
 } from "react-native";
 
-import {Colors, Strings, Styles} from "../resource";
+import {Styles} from "../resource";
 import {ClassifyData} from "./ClassifyData" ;
 import Goods from "./Goods";
 import TestList from "./TestList"
 
-
 export default class Classify extends Component {
-
   constructor(props) {
     super(props);
 
@@ -52,15 +50,15 @@ export default class Classify extends Component {
   }
 
   render() {
-
     return (
-      <View style={[Styles.Row, {height:600, backgroundColor:"#efefef", marginTop: 20}]}>
+      <View style={[Styles.Row, styles.container]}>
         <View>
           {ClassifyData.map((ele, i) => {
             const isSelected = (this.state.value === i );
             return (
               <TouchableOpacity
-                style={[isSelected ? {backgroundColor:"#efefef"} : {backgroundColor:"#ffffff"},{marginTop:5}]}
+                key={i}
+                style={[isSelected ? {backgroundColor: "#efefef"} : {backgroundColor: "#ffffff"}, {marginTop: 5}]}
                 onPress={() => this.onShowDetail(ClassifyData[i].Heading)}>
                 <TestList
                   key={i}
@@ -74,7 +72,9 @@ export default class Classify extends Component {
             if (i % 2 == 0) {
               if (i + 1 < ClassifyData[this.state.value].Item.length) {
                 return (
-                  <View style={Styles.Row}>
+                  <View
+                    key={i}
+                    style={Styles.Row}>
                     <Goods
                       key={i}
                       name={ClassifyData[this.state.value].Item[i].name}
@@ -87,8 +87,7 @@ export default class Classify extends Component {
                       image={ClassifyData[this.state.value].Item[i+1].image} />
                   </View>
                 );
-              }
-              else
+              } else {
                 return (
                   <Goods
                     key={i}
@@ -96,6 +95,7 @@ export default class Classify extends Component {
                     price={ClassifyData[this.state.value].Item[i].price}
                     image={ClassifyData[this.state.value].Item[i].image} />
                 );
+              }
             }
           })}
         </View>
@@ -125,3 +125,11 @@ export default class Classify extends Component {
     }
   }
 }
+
+const styles = {
+  container: {
+    height: 600,
+    backgroundColor: "#efefef",
+    marginTop: 20
+  }
+};

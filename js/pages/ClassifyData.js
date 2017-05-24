@@ -23,7 +23,6 @@
  */
 
 "use strict";
-import React, {Component} from 'react';
 
 export const ClassifyData = [
 
@@ -36,7 +35,7 @@ export const ClassifyData = [
         firstPlace: "越南",
         salesPrice: 10,
         color: "红棕色",
-        introducation: "铁是一种用途十分广泛的金属",
+        introduction: "铁是一种用途十分广泛的金属",
         image: require("../../images/product.png")
       },
 
@@ -46,7 +45,7 @@ export const ClassifyData = [
         firstPlace: "越南",
         salesPrice: 10,
         color: "红棕色",
-        introducation: "铁是一种用途十分广泛的金属",
+        introduction: "铁是一种用途十分广泛的金属",
         image: require("../../images/product.png")
       },
 
@@ -56,7 +55,7 @@ export const ClassifyData = [
         firstPlace: "越南",
         salesPrice: 10,
         color: "红棕色",
-        introducation: "铁是一种用途十分广泛的金属",
+        introduction: "铁是一种用途十分广泛的金属",
         image: require("../../images/product.png")
       }]
   },
@@ -68,7 +67,7 @@ export const ClassifyData = [
       firstPlace: "菲律宾",
       salesPrice: 30,
       color: "黄色",
-      introducation: "铜是一种用途比铁还广泛的金属",
+      introduction: "铜是一种用途比铁还广泛的金属",
       image: require("../../images/product.png")
     }]
   },
@@ -81,9 +80,9 @@ export const ClassifyData = [
         firstPlace: "印度尼西亚",
         salesPrice: 50,
         color: "银色",
-        introducation: "铝是一种用途没有铁广泛的金属",
+        introduction: "铝是一种用途没有铁广泛的金属",
         image: require("../../images/product.png")
       }
     ]
   }
-]
+];

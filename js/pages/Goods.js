@@ -57,7 +57,7 @@ export default class Goods extends Component {
             <Text style={[{fontSize: 20}]}>￥{getPrice(price).x}</Text>
             <Text style={[{fontSize: 15, marginTop:5}]}>{getPrice(price).y}</Text>
           </View>
-          <TouchableOpacity onPress={this._onPop}>
+          <TouchableOpacity onPress={this.onPop}>
             <Icon name={this.state.icon} color={"#f00"} size={25}/>
           </TouchableOpacity>
         </View>
@@ -65,7 +65,7 @@ export default class Goods extends Component {
     );
   }
 
-  _onPop = () => {
+  onPop = () => {
     if (this.state.selected) {
       this.setState({
         icon: "ios-cart-outline",
@@ -84,16 +84,16 @@ export default class Goods extends Component {
 
 function getPrice(price) {  //price是参数，价格
   //我们后面会处理字符串，但因为输入的price参数不一定是字符串，所以先把参数转化成字符串类型
-  var pri = String(price);
+  let pri = String(price);
   //最后需要输出的是整数、小数点、小数三个部分，所以定义一个对象来保存这些值，初始值都是空字符串
-  var obj = {
+  let obj = {
     x: '', //用x表示整数部分
     dot: '',  //用dot表示小数点
     y: '' //用y表示小数部分
-  }
+  };
 
   //这个函数的核心算法就是截取字符串，首先用小数点的位置来定位，就是获取小数点的位置，用indexOf()函数
-  var dotP = pri.indexOf('.'); //indexOf是字符串对象的函数，
+  let dotP = pri.indexOf('.'); //indexOf是字符串对象的函数，
                                //参数是一个需要寻找的字符，返回值是下标，从0开始，如果找不着，则返回-1
 
   //然后判断一下dotP是否是-1，也是就有没有小数点
@@ -112,7 +112,6 @@ function getPrice(price) {  //price是参数，价格
 }
 
 const styles = {
-
   row: {
     flexDirection: "row"
   },

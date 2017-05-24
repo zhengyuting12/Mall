@@ -35,6 +35,7 @@ import {
   FooterTab,
   Text
 } from "native-base";
+
 import Icon from "react-native-vector-icons/Ionicons";
 
 import ShopHome from "./ShopHome";
@@ -102,20 +103,20 @@ class MainPage extends Component {
     let {navigator, route} = this.props;
 
     switch (this.props.selectedTab) {
-    case Config.FooterTabs.ShopHome:
-      return (<ShopHome navigator={navigator} route={route} />);
+      case Config.FooterTabs.ShopHome:
+        return (<ShopHome navigator={navigator} route={route} />);
 
-    case Config.FooterTabs.Classify:
-      return (<Classify navigator={navigator} route={route} />);
+      case Config.FooterTabs.Classify:
+        return (<Classify navigator={navigator} route={route} />);
 
-    case Config.FooterTabs.Discover:
-      return (<Discover navigator={navigator} route={route} />);
+      case Config.FooterTabs.Discover:
+        return (<Discover navigator={navigator} route={route} />);
 
-    case Config.FooterTabs.ShopCart:
-      return (<ShopCartDemo navigator={navigator} route={route} />);
+      case Config.FooterTabs.ShopCart:
+        return (<ShopCartDemo navigator={navigator} route={route} />);
 
-    case Config.FooterTabs.Personal:
-      return (<Personal navigator={navigator} route={route} />);
+      case Config.FooterTabs.Personal:
+        return (<Personal navigator={navigator} route={route} />);
 
       // skip default
     }

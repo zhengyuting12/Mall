@@ -30,7 +30,7 @@ import {
   Text
 } from "react-native";
 
-import {Colors, NativeBaseTheme, Styles, Images} from "../resource";
+import {Styles} from "../resource";
 import Icon from "react-native-vector-icons/Ionicons";
 
 export default class Circle extends Component {
@@ -40,15 +40,28 @@ export default class Circle extends Component {
     return (
       <TouchableOpacity>
         <View
-          style={[{width: 50, height: 50, border: 1, borderColor: "#fff", borderRadius: 25, margin: 13, backgroundColor: color}, Styles.Center]}>
-          <Icon name={iconName}
-                size={30}
-                color={"#fff"}/>
+          style={[styles.header, {backgroundColor: color}, Styles.Center]}>
+          <Icon
+            name={iconName}
+            size={30}
+            color={"#fff"} />
         </View>
-        <View style={Styles.Center}>
+        <View
+          style={Styles.Center}>
           <Text style={{color: "#000"}}>{title}</Text>
         </View>
       </TouchableOpacity>
     );
   }
 }
+
+const styles = {
+  header: {
+    width: 50,
+    height: 50,
+    borderWidth: 1,
+    borderColor: "#fff",
+    borderRadius: 25,
+    margin: 13
+  }
+};

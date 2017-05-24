@@ -29,20 +29,17 @@ import React, {Component} from "react";
 import {
   Container,
   StyleProvider,
-  Text,
-  Item
+  Text
 } from "native-base";
 
-import {Colors, NativeBaseTheme, Styles} from "../resource";
+import {NativeBaseTheme, Styles} from "../resource";
 
 export default class Discover extends Component {
   constructor(props) {
     super(props);
   }
 
-
   render() {
-
     return (
       <StyleProvider style={NativeBaseTheme}>
         <Container style={Styles.MainContent}>
@@ -51,5 +48,4 @@ export default class Discover extends Component {
       </StyleProvider>
     );
   }
-
 }

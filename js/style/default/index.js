@@ -54,7 +54,7 @@ export const Style = {
   WidthUseWindow: {
     width: WindowWidth
   },
-  WidthUseWindowthree: {
+  WidthUseWindowThree: {
     width: WindowWidth/3
   },
   Flex: {

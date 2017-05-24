@@ -42,27 +42,28 @@ import Goods from "./Goods";
 export default class ShopHome extends Component {
   constructor(props) {
     super(props);
-    var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
       dataSource: ds.cloneWithRows(listData)
     }
   }
 
+  //todo: line 64
   render() {
     return (
       <ScrollView style={{height: 620}}>
         <View style={[{marginTop: 20, marginBottom: 35}, Styles.WidthUseWindow]}>
           <Image source={Images.ShopHome} style={[{width: 400, height: 200}, Styles.Row]}>
-            <View style={[Styles.Row, {height: 40, width: 80, margin: 10}]} >
+            <View style={[Styles.Row, {height: 40, width: 80, margin: 10}]}>
               <Icon name="ios-locate-outline" size={25} color={"#fff"} />
               <TouchableOpacity>
                 <Text style={{padding: 4, color: "#fff", fontSize: 20}}>{Strings.position}</Text>
               </TouchableOpacity>
             </View>
             <View
-              style={[Styles.Row, {backgroundColor: 'rgba(255, 255, 255, 0.75)', height: 40, width: 250,border: 1, borderColor: "#fff", borderRadius: 30, marginTop: 5}]}>
+              style={[Styles.Row, styles.searchView]}>
               <View style={{marginLeft: 10, marginTop: 3}}>
-                <Icon name="ios-search" size={30} />
+                <Icon name="ios-search" size={30}/>
               </View>
             </View>
           </Image>
@@ -70,16 +71,18 @@ export default class ShopHome extends Component {
             {CircleData.map((ele, i) => {
               return (
                 <Circle
+                  key={i}
                   title={ele.title}
                   color={ele.color}
-                  iconName={ele.iconName}/>
+                  iconName={ele.iconName} />
               );
             })}
           </View>
           <View style={[Styles.Row, {marginTop: 10}]}>
-            {CircleData2.map(( ele , i ) => {
+            {CircleData2.map((ele, i) => {
               return (
                 <Circle
+                  key={i}
                   title={ele.title}
                   color={ele.color}
                   iconName={ele.iconName} />
@@ -87,30 +90,33 @@ export default class ShopHome extends Component {
             })}
           </View>
           <View>
-            {listData.map(( ele , i ) => {
-             if( i % 2 === 0 ){
-               if(i + 1 < listData.length){
-              return (
-                <View style={Styles.Row}>
-                  <Goods
-                    price={listData[i].price}
-                    image={listData[i].image}
-                    name={listData[i].name} />
-                  <Goods
-                    price={listData[i + 1].price}
-                    image={listData[i + 1].image}
-                    name={listData[i + 1].name} />
-                </View>
-              );
-             }
-             else
-               return(
-                 <Goods
-                   price={listData[i].price}
-                   image={listData[i].image}
-                   name={listData[i].name} />
-               );
-             }
+            {listData.map((ele, i) => {
+              if (i % 2 === 0) {
+                if (i + 1 < listData.length) {
+                  return (
+                    <View
+                      key={i}
+                      style={Styles.Row}>
+                      <Goods
+                        price={listData[i].price}
+                        image={listData[i].image}
+                        name={listData[i].name} />
+                      <Goods
+                        price={listData[i + 1].price}
+                        image={listData[i + 1].image}
+                        name={listData[i + 1].name} />
+                    </View>
+                  );
+                } else {
+                  return (
+                    <Goods
+                      key={i}
+                      price={listData[i].price}
+                      image={listData[i].image}
+                      name={listData[i].name} />
+                  );
+                }
+              }
             })}
           </View>
         </View>
@@ -118,3 +124,15 @@ export default class ShopHome extends Component {
     );
   }
 }
+
+const styles = {
+  searchView: {
+    backgroundColor: 'rgba(255, 255, 255, 0.75)',
+    height: 40,
+    width: 250,
+    borderWidth: 1,
+    borderColor: "#fff",
+    borderRadius: 30,
+    marginTop: 5
+  }
+};
