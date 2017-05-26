@@ -39,6 +39,7 @@ import {
   Left
 }from "native-base"
 
+import LogInPage from "./LogInPage";
 import Icon from "react-native-vector-icons/Ionicons";
 import {Strings, Styles, Images} from "../resource";
 
@@ -83,10 +84,12 @@ export default class ShopHome extends Component {
           <View style={[Styles.Center, Styles.WidthUseWindow, Styles.FlexColumn, {height: 180}]}>
             <View
               style={[{width: 80, height: 80, borderColor: "#efefef", borderWidth: 1, borderRadius: 40, backgroundColor: "#FFF"}]}/>
-            <View
-              style={[{width:80, height: 30, borderColor: "#ff8957", borderWidth: 1,borderRadius: 10, backgroundColor: "#ff8957", marginTop: 10}, Styles.Center]}>
-              <Text style={{color:"#fff"}}>{Strings.LogIn}</Text>
-            </View>
+             <TouchableOpacity onPress={this.LoginPage}>
+              <View
+                style={[{width:80, height: 30, borderColor: "#ff8957", borderWidth: 1,borderRadius: 10, backgroundColor: "#ff8957", marginTop: 10}, Styles.Center]}>
+                <Text style={{color:"#fff"}}>{Strings.LogIn}</Text>
+              </View>
+             </TouchableOpacity>
           </View>
         </Image>
         <View
@@ -128,6 +131,13 @@ export default class ShopHome extends Component {
     );
   }
 
+  LoginPage = () => {
+    this.props.navigator.push({
+      name: "LoginPage",
+      component: LogInPage
+    })
+  }
+
   getRow = (rowData, i1, i2) => {
     return (
       <TouchableOpacity>
@@ -137,7 +147,7 @@ export default class ShopHome extends Component {
         </View>
       </TouchableOpacity>
     );
-  };
+  }
 
   tabItemRender(title, tab) {
 

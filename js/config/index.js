@@ -27,7 +27,8 @@ import {Colors} from "../resource";
 export const Config = {
   Navigation: {
     Splash: "Splash",
-    MainScreen: "Main"
+    MainScreen: "Main",
+    Login: "Login"
   },
 
   FooterTabs: {

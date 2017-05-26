@@ -25,6 +25,8 @@
 export const Image = {
   Splash: require("../../images/splash.jpg"),
   ShopHome: require("../../images/product.png"),
+  Wechat: require("../../images/wechat.png"),
+  HeadPhoto: require("../../images/HeadPhoto.jpg"),
 
   Tab: {
     IconShopHome: "ios-home-outline",

@@ -22,4 +22,54 @@
  * SOFTWARE.
  */
 
-import "./launcher";
+"use strict";
+
+import React, {Component} from "react";
+import {Strings, Styles, Images} from "../resource";
+
+import {
+  View,
+  TouchableOpacity,
+  Image,
+  Text
+} from "react-native";
+
+export default class SignUp extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { text: Strings.SignUp };
+  }
+  render(){
+    return(
+      <View>
+       <View style={styles.Header}>
+         <Text>{Strings.SignUp.ToSignUp}</Text>
+       </View>
+       <TextInput
+         Styles={[Styles.Center,styles.Input]}
+         onChangeText={(text) => this.setState({text})}
+
+       />
+      </View>
+    );
+  }
+}
+const styles = {
+  Header: {
+    marginTop: 30,
+    height: 60,
+    width: Styles.WidthUseWindow,
+    color: "#ffa03f"
+  },
+
+  Input: {
+    height: 60,
+    marginTop: 20,
+    width: 200,
+    borderColor: "#efefef",
+    borderWidth: 1,
+    borderRadius: 5
+  }
+
+
+}

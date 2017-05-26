@@ -33,7 +33,19 @@ const WindowHeight = screenHeight();
 const HEAD_HEIGHT = 64;
 const FOOTER_HEIGHT = 54;
 
+function getWidth(w) {
+  return w / 720 * WindowWidth
+}
+
+function getHeight(h) {
+  return h / 1280 * WindowHeight
+}
+
 export const Style = {
+  Width: getWidth,
+
+  Height: getHeight,
+
   RCenter:{
     alignItems: "center"
   },

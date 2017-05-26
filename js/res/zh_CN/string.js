@@ -51,6 +51,24 @@ export const String = {
   },
   Purchase: {
     recommand:"我的推荐"
+  },
+  Login: {
+    UserName:"用户名",
+    Password:"密码",
+    SignUp:"注册",
+    Iforget:"忘记密码",
+    More:"---------- 其他登录方式 ----------",
+    ToLogin:"登录"
+  },
+  SignUp: {
+    ToSignUp: "注册",
+    PhoneNumber: "手机号",
+    Identify: "验证码",
+    UserName: "用户名",
+    Password: "密码",
+    RePassword: "确认密码",
+    Contract: "我已阅读并同意用户协议",
+    Finish: "完成注册",
+    Abroad: "海外注册请点这里"
   }
-
 };
