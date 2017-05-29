@@ -30,15 +30,15 @@ import {screenWidth, screenHeight} from "../../util/system";
 const WindowWidth = screenWidth();
 const WindowHeight = screenHeight();
 
-const HEAD_HEIGHT = 64;
-const FOOTER_HEIGHT = 54;
+const HEAD_HEIGHT = getHeight(100);
+const FOOTER_HEIGHT = getHeight(100);
 
 function getWidth(w) {
-  return w / 720 * WindowWidth
+  return w / 720 * WindowWidth;
 }
 
 function getHeight(h) {
-  return h / 1280 * WindowHeight
+  return h / 1280 * WindowHeight;
 }
 
 export const Style = {
@@ -67,7 +67,7 @@ export const Style = {
     width: WindowWidth
   },
   WidthUseWindowThree: {
-    width: WindowWidth/3
+    width: WindowWidth/3.5
   },
   Flex: {
     flex: 1
@@ -150,7 +150,7 @@ export const Style = {
   TabIcon: {
     size: 28,
     normal: Color.iconGrey,
-    focused: Color.red
+    focused: Color.MainColor
   },
 
   TabTitle: {
@@ -159,7 +159,7 @@ export const Style = {
   },
 
   TabTitleFocused: {
-    color: Color.red,
+    color: Color.MainColor,
     fontSize: 12
   },
 
@@ -187,8 +187,8 @@ export const Style = {
   },
 
   itemStyle: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
+    flexDirection: "row",
+    flexWrap: "wrap",
 
   }
 };

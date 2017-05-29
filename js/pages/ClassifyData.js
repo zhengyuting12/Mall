@@ -23,66 +23,171 @@
  */
 
 "use strict";
-
+import {Strings, Images} from "../resource";
 export const ClassifyData = [
 
   {
-    Heading: "热门分类",
+    Heading: Strings.Classify.hot,
     Item: [
+        {
+          name: Strings.Classify.catdress,
+          price: 60,
+          image: Images.personal.dress1
+        },
+
+        {
+          name: Strings.Classify.cell,
+          price: 30.54,
+          image: Images.personal.dress2
+        },
+
+        {
+          name: Strings.Classify.blue,
+          price: 90,
+          image: Images.personal.dress3
+        },
       {
-        name: "三只松鼠牌坚果",
-        price: 30.54,
-        firstPlace: "越南",
-        salesPrice: 10,
-        color: "红棕色",
-        introduction: "铁是一种用途十分广泛的金属",
-        image: require("../../images/product.png")
+        name: Strings.Classify.catdress,
+        price: 60,
+        image: Images.personal.dress1
       },
 
       {
-        name: "三只松鼠牌坚果",
+        name: Strings.Classify.cell,
         price: 30.54,
-        firstPlace: "越南",
-        salesPrice: 10,
-        color: "红棕色",
-        introduction: "铁是一种用途十分广泛的金属",
-        image: require("../../images/product.png")
+        image: Images.personal.dress2
       },
 
       {
-        name: "三只松鼠牌坚果",
+        name: Strings.Classify.blue,
+        price: 90,
+        image: Images.personal.dress3
+      },
+      {
+        name: Strings.Classify.catdress,
+        price: 60,
+        image: Images.personal.dress1
+      },
+
+      {
+        name: Strings.Classify.cell,
         price: 30.54,
-        firstPlace: "越南",
-        salesPrice: 10,
-        color: "红棕色",
-        introduction: "铁是一种用途十分广泛的金属",
-        image: require("../../images/product.png")
+        image: Images.personal.dress2
+      },
+
+      {
+        name: Strings.Classify.skirt,
+        price: 90,
+        image: Images.personal.dress3
       }]
   },
   {
-    Heading: "农药",
-    Item:[{
-      name: "铜",
-      price: 60,
-      firstPlace: "菲律宾",
-      salesPrice: 30,
-      color: "黄色",
-      introduction: "铜是一种用途比铁还广泛的金属",
-      image: require("../../images/product.png")
-    }]
+    Heading: Strings.Classify.dress,
+    Item: [
+      {
+        name: Strings.Classify.catdress,
+        price: 60,
+        image: Images.personal.dress1
+      },
+
+      {
+        name: Strings.Classify.cell,
+        price: 30.54,
+        image: Images.personal.dress2
+      },
+
+      {
+        name: Strings.Classify.skirt,
+        price: 90,
+        image: Images.personal.dress3
+      },
+      {
+        name: Strings.Classify.catdress,
+        price: 60,
+        image: Images.personal.dress1
+      },
+
+      {
+        name: Strings.Classify.cell,
+        price: 30.54,
+        image: Images.personal.dress2
+      },
+
+      {
+        name: Strings.Classify.skirt,
+        price: 90,
+        image: Images.personal.dress3
+      },
+      {
+        name: Strings.Classify.catdress,
+        price: 60,
+        image: Images.personal.dress1
+      },
+
+      {
+        name: Strings.Classify.cell,
+        price: 30.54,
+        image: Images.personal.dress2
+      },
+
+      {
+        name: Strings.Classify.skirt,
+        price: 90,
+        image: Images.personal.dress3
+      }]
   },
   {
-    Heading: "厨房用品",
-    Item:[
+    Heading: Strings.Classify.skirt,
+    Item: [
       {
-        name: "铝",
+        name: Strings.Classify.catdress,
+        price: 60,
+        image: Images.personal.dress1
+      },
+
+      {
+        name: Strings.Classify.cell,
+        price: 30.54,
+        image: Images.personal.dress2
+      },
+
+      {
+        name: Strings.Classify.skirt,
         price: 90,
-        firstPlace: "印度尼西亚",
-        salesPrice: 50,
-        color: "银色",
-        introduction: "铝是一种用途没有铁广泛的金属",
-        image: require("../../images/product.png")
-      }
-    ]
-  }
-];
+        image: Images.personal.dress3
+      },
+      {
+        name: Strings.Classify.catdress,
+        price: 60,
+        image: Images.personal.dress1
+      },
+
+      {
+        name: Strings.Classify.cell,
+        price: 30.54,
+        image: Images.personal.dress2
+      },
+
+      {
+        name: Strings.Classify.blue,
+        price: 90,
+        image: Images.personal.dress3
+      },
+      {
+        name: Strings.Classify.catdress,
+        price: 60,
+        image: Images.personal.dress1
+      },
+
+      {
+        name: Strings.Classify.cell,
+        price: 30.54,
+        image: Images.personal.dress2
+      },
+
+      {
+        name: Strings.Classify.blue,
+        price: 90,
+        image: Images.personal.dress3
+      }]
+}];

@@ -36,8 +36,8 @@ export const Color = {
   black: "#000000",
   grey: fontGrey,
   favouriteGrey: "#efefef",
-  red: "#ff0000",
-  iconGrey: "#333333",
+  MainColor: "#b4eff9",
+  iconGrey: "#737373",
   yellow: "#ffff00",
   blue: "#0000ff",
   green: "#00ff00",
@@ -47,8 +47,23 @@ export const Color = {
   indigo: "#4B0082",
   skyBlue: "#87CEEB",
   lightCyan: "#E1FFFF",
+  lightGrey: "#f7f6f6",
   turquoise: "#40E0D0",
   orange: "#ff7f24",
+
+  //主页圆圈色
+  Main: {
+    Firstone: "#bce458",
+    Firsttwo: "#53ebe2",
+    Firstthree: "#ffc0a4",
+    Firstfour: "#ffde6b",
+    Firstfive: "#62c3d0",
+    Secone: "#f9ff72",
+    Sectwo: "#e9cbdd",
+    secthree: "#f4af78",
+    secfour: "#ffbbde",
+    secfive: "#aec9e8"
+  },
 
   //商品详情页
   priceRed: "#e62129",

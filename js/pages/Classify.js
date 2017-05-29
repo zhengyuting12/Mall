@@ -35,10 +35,11 @@ import {
   ScrollView
 } from "react-native";
 
-import {Styles} from "../resource";
-import {ClassifyData} from "./ClassifyData" ;
-import Goods from "./Goods";
-import TestList from "./TestList"
+import {Styles, Strings} from "../resource";
+import {ClassifyData} from "./ClassifyData";
+import Header from "../component/Header";
+import LittleGoods from "../component/LittleGoods";
+import TestList from "./TestList";
 
 export default class Classify extends Component {
   constructor(props) {
@@ -46,58 +47,62 @@ export default class Classify extends Component {
 
     this.state = {
       value: 0
-    }
+    };
   }
 
+  //todo:color
   render() {
     return (
-      <View style={[Styles.Row, styles.container]}>
-        <View>
-          {ClassifyData.map((ele, i) => {
-            const isSelected = (this.state.value === i );
-            return (
-              <TouchableOpacity
-                key={i}
-                style={[isSelected ? {backgroundColor: "#efefef"} : {backgroundColor: "#ffffff"}, {marginTop: 5}]}
-                onPress={() => this.onShowDetail(ClassifyData[i].Heading)}>
-                <TestList
+      <View>
+        <Header Header={Strings.classify}/>
+        <View style={[Styles.Row, styles.container]}>
+          <View>
+            {ClassifyData.map((ele, i) => {
+              const isSelected = (this.state.value === i );
+              return (
+                <TouchableOpacity
                   key={i}
-                  Heading={ClassifyData[i].Heading} />
-              </TouchableOpacity>
-            );
-          })}
-        </View>
-        <View>
-          {ClassifyData[this.state.value].Item.map((ele, i) => {
-            if (i % 2 == 0) {
-              if (i + 1 < ClassifyData[this.state.value].Item.length) {
-                return (
-                  <View
+                  style={[isSelected ? {backgroundColor: "#efefef"} : {backgroundColor: "#ffffff"}, {marginTop: 5}]}
+                  onPress={() => this.onShowDetail(ClassifyData[i].Heading)}>
+                  <TestList
                     key={i}
-                    style={Styles.Row}>
-                    <Goods
+                    Heading={ClassifyData[i].Heading} />
+                </TouchableOpacity>
+              );
+            })}
+          </View>
+          <ScrollView>
+            {ClassifyData[this.state.value].Item.map((ele, i) => {
+              if (i % 2 == 0) {
+                if (i + 1 < ClassifyData[this.state.value].Item.length) {
+                  return (
+                    <View
+                      key={i}
+                      style={Styles.Row}>
+                      <LittleGoods
+                        key={i}
+                        name={ClassifyData[this.state.value].Item[i].name}
+                        price={ClassifyData[this.state.value].Item[i].price}
+                        image={ClassifyData[this.state.value].Item[i].image} />
+                      <LittleGoods
+                        key={i + 1}
+                        name={ClassifyData[this.state.value].Item[i+1].name}
+                        price={ClassifyData[this.state.value].Item[i+1].price}
+                        image={ClassifyData[this.state.value].Item[i+1].image} />
+                    </View>
+                  );
+                } else {
+                  return (
+                    <LittleGoods
                       key={i}
                       name={ClassifyData[this.state.value].Item[i].name}
                       price={ClassifyData[this.state.value].Item[i].price}
                       image={ClassifyData[this.state.value].Item[i].image} />
-                    <Goods
-                      key={i + 1}
-                      name={ClassifyData[this.state.value].Item[i+1].name}
-                      price={ClassifyData[this.state.value].Item[i+1].price}
-                      image={ClassifyData[this.state.value].Item[i+1].image} />
-                  </View>
-                );
-              } else {
-                return (
-                  <Goods
-                    key={i}
-                    name={ClassifyData[this.state.value].Item[i].name}
-                    price={ClassifyData[this.state.value].Item[i].price}
-                    image={ClassifyData[this.state.value].Item[i].image} />
-                );
+                  );
+                }
               }
-            }
-          })}
+            })}
+          </ScrollView>
         </View>
       </View>
     );
@@ -128,8 +133,7 @@ export default class Classify extends Component {
 
 const styles = {
   container: {
-    height: 600,
-    backgroundColor: "#efefef",
-    marginTop: 20
+    height: Styles.Height(1280),
+    backgroundColor: "#efefef"  //todo
   }
 };

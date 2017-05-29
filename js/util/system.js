@@ -57,35 +57,34 @@ export function message(text, onOk, onCancle) {
   if (isAndroid()) {
     ToastAndroid.show(text, ToastAndroid.SHORT);
   } else if (isIOS()) {
-    Alert.alert('通知！', text, [
+    Alert.alert("通知！", text, [
         {
-          text: 'Cancel',
+          text: "Cancel",
           onPress: onCancle
         },
         {
-          text: 'OK',
+          text: "OK",
           onPress: onOk
         }
       ]
-    )
+    );
   }
 }
 
 export function setPrice(price) {
-  var obj = {};
-  var dot = String(price).indexOf('.');
+  let obj = {};
+  let dot = String(price).indexOf(".");
   if (dot > 0) {
-    var y = String(price).substring(0, dot + 1);
-    var x = String(price).substring(dot + 1, String(price).length);
+    let y = String(price).substring(0, dot + 1);
+    let x = String(price).substring(dot + 1, String(price).length);
     obj = {
       y, x
     };
   } else {
     obj = {
       y: price,
-      x: ''
-    }
+      x: ""
+    };
   }
   return obj;
 }
-

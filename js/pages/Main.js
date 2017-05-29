@@ -30,7 +30,6 @@ import {View} from "react-native";
 import {
   Button,
   Container,
-  Content,
   Footer,
   FooterTab,
   Text
@@ -44,7 +43,7 @@ import Discover from "./Discover";
 import ShopCartDemo from "./ShopCartDemo";
 import Personal from "./Personal";
 
-import {Styles, Images, Strings} from "../resource";
+import {Styles, Images, Strings, Colors} from "../resource";
 import {Config} from "../config";
 import {switchFooterTab} from "../actions";
 
@@ -62,14 +61,14 @@ class MainPage extends Component {
   render() {
     return (
       <Container>
-        <Content scrollEnabled={false} style={Styles.MainContent}>
+        <View scrollEnabled={false} style={[Styles.MainContent]}>
           {this.contentRender()}
-        </Content>
+        </View>
         <Footer style={Styles.Tab}>
           <FooterTab>
             {this.tabItemRender(Strings.Tab.ShopHome, Images.Tab.IconShopHome, Images.Tab.IconShopHomeFocus, Config.FooterTabs.ShopHome)}
             {this.tabItemRender(Strings.Tab.Classify, Images.Tab.IconClassify, Images.Tab.IconClassifyFocus, Config.FooterTabs.Classify)}
-            {this.tabItemRender(Strings.Tab.Discover, Images.Tab.IconDiscover, Images.Tab.IconClassifyFocus, Config.FooterTabs.Discover)}
+            {this.tabItemRender(Strings.Tab.Discover, Images.Tab.IconDiscover, Images.Tab.IconDiscover, Config.FooterTabs.Discover)}
             {this.tabItemRender(Strings.Tab.ShopCart, Images.Tab.IconShopCart, Images.Tab.IconShopCartFocus, Config.FooterTabs.ShopCart)}
             {this.tabItemRender(Strings.Tab.Personal, Images.Tab.IconPersonal, Images.Tab.IconPersonalFocus, Config.FooterTabs.Personal)}
           </FooterTab>
@@ -89,7 +88,7 @@ class MainPage extends Component {
     const isSelected = (this.props.selectedTab == tab);
 
     return (
-      <View style={[Styles.Flex, {backgroundColor: "#ffffff"}]}>
+      <View style={[Styles.Flex, {backgroundColor: Colors.white}]}>
         <Button onPress={() => this.onFooterTabChanged(tab)}>
           <Icon name={isSelected ? focused : normal} size={Styles.TabIcon.size}
                 color={isSelected ? Styles.TabIcon.focused : Styles.TabIcon.normal} />

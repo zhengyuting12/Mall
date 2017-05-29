@@ -23,45 +23,63 @@
  */
 
 "use strict";
-import React, {Component} from "react";
+import React, { Component } from "react";
 import {
+  AppRegistry,
+  Text,
   View,
-  TouchableOpacity,
-  Text
+  Image
 } from "react-native";
 
-import {Styles} from "../resource";
-import Icon from "react-native-vector-icons/Ionicons";
+import Swiper from "react-native-swiper";
+import {Images, Styles} from "../resource";
 
-export default class Circle extends Component {
+export default class Swipe extends Component {
   render() {
-    let {color, iconName, title} = this.props;
-
     return (
-      <TouchableOpacity>
-        <View
-          style={[styles.header, {backgroundColor: color}, Styles.Center]}>
-          <Icon
-            name={iconName}
-            size={30}
-            color={"#fff"} />
+      <Swiper
+        showsButtons={false}
+        height={200}>
+        <View style={styles.slide1}>
+          <Image
+            source={Images.HeadPhoto}
+            style={{width: Styles.Width(720), height: 200}} />
         </View>
-        <View
-          style={Styles.Center}>
-          <Text style={{color: "#000"}}>{title}</Text>
+        <View style={styles.slide2}>
+          <Text style={styles.text}>Beautiful</Text>
         </View>
-      </TouchableOpacity>
+        <View style={styles.slide3}>
+          <Text style={styles.text}>And simple</Text>
+        </View>
+      </Swiper>
     );
   }
 }
-
+//todo: height
 const styles = {
-  header: {
-    width: 50,
-    height: 50,
-    borderWidth: 1,
-    borderColor: "#fff",
-    borderRadius: 25,
-    margin: 13
+  slide1: {
+    height: 200,
+    justifyContent: "center",
+    alignItems: "center"
+  },
+
+  slide2: {
+    height: 200,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#97CAE5"
+  },
+
+  slide3: {
+    height: 200,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#92BBD9"
+  },
+
+  text: {
+    color: "#fff",
+    fontSize: 30,
+    fontWeight: "bold"
   }
 };

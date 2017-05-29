@@ -1,120 +1,100 @@
 /**
  * Created by 12point on 28/03/2017.
  */
-
+import {Images, Strings, Colors} from "../resource"
 export const CircleData =[
   {
-    color: "#acce22",
+    color: Colors.Main.Firstone,
     iconName: "ios-home-outline",
-    title: "商店"
+    title: Strings.MainBar.dress1
   },
 
   {
-    color: "#00a2e9",
+    color: Colors.Main.Firsttwo,
     iconName: "ios-happy-outline",
-    title: "商店"
+    title: Strings.MainBar.dress2
   },
 
   {
-    color: "#f4b5d0",
+    color: Colors.Main.Firstthree,
     iconName: "logo-reddit",
-    title: "商店"
+    title: Strings.MainBar.dress3
   },
 
   {
-    color: "#ffda44",
+    color: Colors.Main.Firstfour,
     iconName: "ios-outlet-outline",
-    title: "商店"
+    title: Strings.MainBar.dress4
   },
 
   {
-    color: "#62c3d0",
+    color: Colors.Main.Firstfive,
     iconName: "ios-text-outline",
-    title: "商店"
+    title: Strings.MainBar.dress5
   }
 ];
 
 export const CircleData2 =[
   {
-    color: "#acce22",
+    color: Colors.Main.Secone,
     iconName: "ios-home-outline",
-    title: "商店"
+    title: Strings.MainBar.dress6
   },
 
   {
-    color: "#00a2e9",
+    color: Colors.Main.Sectwo,
     iconName: "ios-happy-outline",
-    title: "商店"
+    title: Strings.MainBar.dress7
   },
 
   {
-    color: "#f4b5d0",
+    color: Colors.Main.secthree,
     iconName: "logo-reddit",
-    title: "商店"
+    title: Strings.MainBar.dress8
   },
 
   {
-    color: "#ffda44",
+    color: Colors.Main.secfour,
     iconName: "ios-outlet-outline",
-    title: "商店"
+    title: Strings.MainBar.dress9
   },
 
   {
-    color: "#62c3d0",
+    color: Colors.Main.secfive,
     iconName: "ios-text-outline",
-    title: "商店"
+    title: Strings.MainBar.dress10
   }
 ];
 
 
 export const listData = [
   {
-    name: "三只松鼠牌坚果",
+    name: Strings.MainLoliName.LoliOne,
     price: 30.54,
-    firstPlace: "越南",
-    salesPrice: 10,
-    color: "红棕色",
-    introduction: "铁是一种用途十分广泛的金属",
-    image: require("../../images/product.png")
+    image: Images.MainLoli.LoliOne
   },
 
   {
-    name: "铜",
+    name: Strings.MainLoliName.LoliTwo,
     price: 60,
-    firstPlace: "菲律宾",
-    salesPrice: 30,
-    color: "黄色",
-    introduction: "铜是一种用途比铁还广泛的金属",
-    image: require("../../images/product.png")
+    image: Images.MainLoli.LoliTwo
   },
 
   {
-    name: "铝",
+    name: Strings.MainLoliName.LoliThree,
     price: 90,
-    firstPlace: "印度尼西亚",
-    salesPrice: 50,
-    color: "银色",
-    introduction: "铝是一种用途没有铁广泛的金属",
-    image: require("../../images/product.png")
+    image: Images.MainLoli.LoliThree
   },
 
   {
-    name: "镍",
+    name: Strings.MainLoliName.LoliFour,
     price: 120,
-    firstPlace: "加勒比海",
-    salesPrice: 10,
-    color: "不知道什么色",
-    introduction: "镍是一种用途没有以上三种广泛的金属",
-    image: require("../../images/product.png")
+    image: Images.MainLoli.LoliFour
   },
 
   {
-    name: "镍",
+    name: Strings.MainLoliName.LoliFive,
     price: 120,
-    firstPlace: "加勒比海",
-    salesPrice: 10,
-    color: "不知道什么色",
-    introduction: "镍是一种用途没有以上三种广泛的金属",
-    image: require("../../images/product.png")
+    image:Images.MainLoli.LoliFive
   }
 ];

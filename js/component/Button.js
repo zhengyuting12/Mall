@@ -4,7 +4,6 @@
 import React, {Component} from "react";
 import {
     StyleSheet,
-    View,
     Text,
     TouchableOpacity
 } from "react-native";
@@ -13,7 +12,7 @@ import Icon from "react-native-vector-icons/Ionicons";
 
 export default class Button extends Component {
     render() {
-        let {iconName, title, style, onClick} = this.props;
+        let {iconName, title, onClick} = this.props;
 
         return(
             <TouchableOpacity

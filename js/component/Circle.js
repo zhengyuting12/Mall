@@ -23,13 +23,46 @@
  */
 
 "use strict";
+import React, {Component} from "react";
+import {
+  View,
+  TouchableOpacity,
+  Text
+} from "react-native";
 
-let a = [100];
+import {Styles} from "../resource";
+import Icon from "react-native-vector-icons/Ionicons";
 
-for (i = 0; i < 100; i++) {
-  a[i] = i;
+export default class Circle extends Component {
+  render() {
+    let {color, iconName, title} = this.props;
+
+    return (
+      <TouchableOpacity>
+        <View
+          style={[styles.header, {backgroundColor: color}, Styles.Center]}>
+          <Icon
+            name={iconName}
+            size={30}
+            color={"#fff"} />
+        </View>
+        <View
+          style={Styles.Center}>
+          <Text style={{color: "#000"}}>{title}</Text>
+        </View>
+      </TouchableOpacity>
+    );
+  }
 }
 
-for (t = 0; t < 100; t = t + 3) {
-  console.log(a[t] + "," + a[t + 1] + "," + a[t + 2]);
-}
+//todo: 尺寸
+const styles = {
+  header: {
+    width: 50,
+    height: 50,
+    borderWidth: 1,
+    borderColor: "#fff", //todo： 颜色
+    borderRadius: 25,
+    margin: 16
+  }
+};

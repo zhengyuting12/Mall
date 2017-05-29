@@ -37,7 +37,7 @@ import {
 } from "react-native";
 
 import Main from "./Main";
-import Button from "./Button";
+import Button from "../component/Button";
 import Icon from "react-native-vector-icons/Ionicons";
 import {Strings, Styles, Images, Config} from "../resource";
 
@@ -54,12 +54,14 @@ export default class LogInPage extends Component {
     return (
       <View style={[Styles.WidthUseWindow, {marginTop: 20, alignItems: "center", height: 600}]}>
         <View style={[styles.row, {height:30}]}>
-          <View style={[{flex: 1}, {justifyContent: "center", marginLeft: 10}]}>
+          <TouchableOpacity
+            onPress={this.SignUp}
+            style={[{flex: 1}, {justifyContent: "center", marginLeft: 10}]}>
             <Icon name={"ios-close"} size={30} />
-          </View>
+          </TouchableOpacity>
           <TouchableOpacity onPress={this.SignUp}>
             <View style={[ {justifyContent: "center", marginRight: 10}]}>
-              <Text style={{fontSize: 10}}>{Strings.Login.SignUp}</Text>
+              <Text style={{fontSize: 15}}>{Strings.Login.SignUp}</Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -116,10 +118,7 @@ export default class LogInPage extends Component {
   };
 
   SignUp = () => {
-    this.props.navigator.push({
-      name: "Main",
-      component: Main
-    })
+    this.props.navigator.pop();
   }
 }
 

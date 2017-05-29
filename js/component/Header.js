@@ -22,51 +22,53 @@
  * SOFTWARE.
  */
 
-"use strict";
-
 import React, {Component} from "react";
-import {Strings, Styles} from "../resource";
-
 import {
   View,
-  Text
+  Text,
+  TouchableOpacity
 } from "react-native";
+import {
+  Left
+}from "native-base"
 
-export default class SignUp extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { text: Strings.SignUp };
-  }
+import {Styles, Colors, String} from "../resource"
+import Icon from "react-native-vector-icons/Ionicons";
+
+export default class Header extends Component {
   render(){
+    let {Header, iconName}=this.props;
     return(
-      <View>
-       <View style={styles.Header}>
-         <Text>{Strings.SignUp.ToSignUp}</Text>
-       </View>
-       <TextInput
-         Styles={[Styles.Center,styles.Input]}
-         onChangeText={(text) => this.setState({text})}
-
-       />
+      <View style={[styles.header, Styles.WidthUseWindow, Styles.Row]}>
+        <Left>
+          <View
+            style={[Styles.Row, {alignItems: "center"}]}>
+            {iconName ?
+              <TouchableOpacity onPress={this.onBack}>
+              <Icon
+              name={iconName}
+              size={30}
+              style={{marginLeft: 10, marginRight: 10, color: Colors.iconGrey}} />
+              </TouchableOpacity> : null}
+            <Text style={{padding: 10, fontSize: 20, color:Colors.iconGrey}}>{Header}</Text>
+          </View>
+        </Left>
+        <TouchableOpacity style={[Styles.Row, {alignItems: "center"}]}>
+          <Icon name="ios-more" size={30} color={Colors.iconGrey} style={{marginRight:10}} />
+        </TouchableOpacity>
       </View>
     );
   }
-}
-const styles = {
-  Header: {
-    marginTop: 30,
-    height: 60,
-    width: Styles.WidthUseWindow,
-    color: "#ffa03f"
-  },
 
-  Input: {
-    height: 60,
-    marginTop: 20,
-    width: 200,
-    borderColor: "#efefef",
-    borderWidth: 1,
-    borderRadius: 5
+  onBack = () => {
+    this.props.navigator.pop()
   }
+}
 
+const styles = {
+  header: {
+    height: 50,
+    backgroundColor: Colors.MainColor,
+    marginTop: 20
+  }
 };

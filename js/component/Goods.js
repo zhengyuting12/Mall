@@ -31,6 +31,7 @@ import {
   Image
 } from "react-native";
 
+import {Colors, Styles} from "../resource";
 import Icon from "react-native-vector-icons/Ionicons";
 
 export default class Goods extends Component {
@@ -47,8 +48,8 @@ export default class Goods extends Component {
     let {name, price, image} = this.props;
 
     return (
-      <View style={[{width: 150, height: 150, marginLeft: 20, marginTop: 40}]}>
-        <Image source={image} style={[{width: 150, height: 120, marginBottom: 10}]} />
+      <View style={styles.goodsStyle}>
+        <Image source={image} style={[{width: 160, height: 160, marginBottom: 10, borderWidth: 1,borderColor: Colors.favouriteGrey, borderRadius: 10}]} />
         <View style={{marginBottom:10}}>
           <Text>{name}</Text>
         </View>
@@ -117,5 +118,12 @@ const styles = {
   },
 
   priceStyle: {
+  },
+
+  goodsStyle: {
+    height: Styles.Height(400),
+    width: Styles.Width(280),
+    marginTop: 20,
+    marginLeft: 25
   }
 };

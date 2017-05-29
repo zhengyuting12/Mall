@@ -27,17 +27,18 @@ import React, {Component} from "react";
 import {
   View,
   TouchableOpacity,
-  Image,
   Text,
   ScrollView,
-  ListView
+  ListView,
+  TextInput
 } from "react-native";
 
-import {Strings, Styles, Images} from "../resource";
+import {Strings, Styles, Colors} from "../resource";
 import Icon from "react-native-vector-icons/Ionicons";
+import Swipe from "../component/ScrollPhoto";
 import {CircleData, CircleData2, listData} from "./CircleData" ;
-import Circle from "./Circle";
-import Goods from "./Goods";
+import Circle from "../component/Circle";
+import Goods from "../component/Goods";
 
 export default class ShopHome extends Component {
   constructor(props) {
@@ -45,29 +46,35 @@ export default class ShopHome extends Component {
     let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
       dataSource: ds.cloneWithRows(listData)
-    }
+    };
   }
 
-  //todo: line 64
   render() {
     return (
-      <ScrollView style={{height: 620}}>
-        <View style={[{marginTop: 20, marginBottom: 35}, Styles.WidthUseWindow]}>
-          <Image source={Images.ShopHome} style={[{width: 400, height: 200}, Styles.Row]}>
+      <ScrollView style={{height: Styles.Height(1180)}}>
+        <View style={[{marginTop: 20, marginBottom: 35, width: Styles.Width(720)}]}>
+          <Swipe />
+          <View style={[styles.adImage, Styles.Row]}>
             <View style={[Styles.Row, {height: 40, width: 80, margin: 10}]}>
-              <Icon name="ios-locate-outline" size={25} color={"#fff"} />
               <TouchableOpacity>
-                <Text style={{padding: 4, color: "#fff", fontSize: 20}}>{Strings.position}</Text>
+                <Text style={{padding: 4, color: "#fff", fontSize: 14}}>{Strings.position}</Text>
               </TouchableOpacity>
             </View>
             <View
               style={[Styles.Row, styles.searchView]}>
-              <View style={{marginLeft: 10, marginTop: 3}}>
+              <View
+                style={[{marginLeft: 10, marginTop: 3}, Strings.Row]}>
                 <Icon name="ios-search" size={30}/>
               </View>
+              <View
+                style={{width: 250, height: 40}}>
+                <TextInput
+                  style={{flex: 1, fontSize: 15}}
+                  placeholder={Strings.SearchBar} />
+              </View>
             </View>
-          </Image>
-          <View style={[Styles.Row, {marginTop: 10}]}>
+          </View>
+          <View style={[Styles.Row, styles.tabsView]}>
             {CircleData.map((ele, i) => {
               return (
                 <Circle
@@ -78,7 +85,7 @@ export default class ShopHome extends Component {
               );
             })}
           </View>
-          <View style={[Styles.Row, {marginTop: 10}]}>
+          <View style={[Styles.Row, styles.tabsView]}>
             {CircleData2.map((ele, i) => {
               return (
                 <Circle
@@ -89,7 +96,8 @@ export default class ShopHome extends Component {
               );
             })}
           </View>
-          <View>
+          <View style={{marginTop: 10, backgroundColor: Colors.lightGrey, height: 20, width: Styles.Width(720)}}/>
+          <View style={[{width: Styles.Width(720), marginLeft: 8}]}>
             {listData.map((ele, i) => {
               if (i % 2 === 0) {
                 if (i + 1 < listData.length) {
@@ -126,12 +134,23 @@ export default class ShopHome extends Component {
 }
 
 const styles = {
+  adImage: {
+    width: Styles.Width(720),
+    position: "absolute"
+  },
+
+  tabsView: {
+    marginTop: 10,
+    width: Styles.Width(720),
+    justifyContent: "center"
+  },
+
   searchView: {
-    backgroundColor: 'rgba(255, 255, 255, 0.75)',
-    height: 40,
+    backgroundColor: "rgba(255, 255, 255, 0.75)",
     width: 250,
+    height: 40,
     borderWidth: 1,
-    borderColor: "#fff",
+    borderColor: "#fff", //todo
     borderRadius: 30,
     marginTop: 5
   }

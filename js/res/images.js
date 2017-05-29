@@ -27,6 +27,7 @@ export const Image = {
   ShopHome: require("../../images/product.png"),
   Wechat: require("../../images/wechat.png"),
   HeadPhoto: require("../../images/HeadPhoto.jpg"),
+  Personal: require("../../images/personals.jpg"),
 
   Tab: {
     IconShopHome: "ios-home-outline",
@@ -59,5 +60,20 @@ export const Image = {
     Budget: "md-calculator",
     Contact: "ios-people",
     Suggestion: "md-paw"
+  },
+
+  MainLoli: {
+    LoliOne: require("../../images/loli1.jpg"),
+    LoliTwo: require("../../images/loli2.jpg"),
+    LoliThree: require("../../images/loli3.jpg"),
+    LoliFour: require("../../images/loli4.jpg"),
+    LoliFive: require("../../images/loli5.jpg"),
+  },
+
+  personal: {
+    dress1: require("../../images/skirt1.jpg"),
+    dress2: require("../../images/skirt2.jpg"),
+    dress3: require("../../images/skirt3.jpg")
   }
+
 };
