@@ -26,7 +26,8 @@ export const Config = {
   Navigation: {
     Splash: "Splash",
     MainScreen: "Main",
-    Login: "Login"
+    Login: "Login",
+    SignUp: "SignUp"
   },
 
   FooterTabs: {

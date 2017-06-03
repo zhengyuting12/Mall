@@ -28,33 +28,35 @@ import {
   Text,
   TouchableOpacity
 } from "react-native";
+
 import {
   Left
-}from "native-base"
+} from "native-base"
 
-import {Styles, Colors, String} from "../resource"
+import {Styles, Colors} from "../resource"
 import Icon from "react-native-vector-icons/Ionicons";
 
+//todo: line 59
 export default class Header extends Component {
-  render(){
+  render() {
     let {Header, iconName}=this.props;
-    return(
+    return (
       <View style={[styles.header, Styles.WidthUseWindow, Styles.Row]}>
         <Left>
           <View
             style={[Styles.Row, {alignItems: "center"}]}>
             {iconName ?
               <TouchableOpacity onPress={this.onBack}>
-              <Icon
-              name={iconName}
-              size={30}
-              style={{marginLeft: 10, marginRight: 10, color: Colors.iconGrey}} />
+                <Icon
+                  name={iconName}
+                  size={30}
+                  style={{marginLeft: 10, marginRight: 10, color: Colors.iconGrey}}/>
               </TouchableOpacity> : null}
             <Text style={{padding: 10, fontSize: 20, color:Colors.iconGrey}}>{Header}</Text>
           </View>
         </Left>
         <TouchableOpacity style={[Styles.Row, {alignItems: "center"}]}>
-          <Icon name="ios-more" size={30} color={Colors.iconGrey} style={{marginRight:10}} />
+          <Icon name="ios-more" size={30} color={Colors.iconGrey} style={{marginRight:10}}/>
         </TouchableOpacity>
       </View>
     );
@@ -62,7 +64,7 @@ export default class Header extends Component {
 
   onBack = () => {
     this.props.navigator.pop()
-  }
+  };
 }
 
 const styles = {

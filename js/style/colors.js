@@ -36,7 +36,7 @@ export const Color = {
   black: "#000000",
   grey: fontGrey,
   favouriteGrey: "#efefef",
-  MainColor: "#b4eff9",
+  MainColor: "#a4dde7",
   iconGrey: "#737373",
   yellow: "#ffff00",
   blue: "#0000ff",

@@ -39,7 +39,8 @@ import {
 import Main from "./Main";
 import Button from "../component/Button";
 import Icon from "react-native-vector-icons/Ionicons";
-import {Strings, Styles, Images, Config} from "../resource";
+import {Strings, Styles, Images, Config, Colors} from "../resource";
+import SignUp from "./SignUp";
 
 export default class LogInPage extends Component {
   constructor(props) {
@@ -50,14 +51,15 @@ export default class LogInPage extends Component {
     };
   }
 
+  //todo: 尺寸，颜色
   render() {
     return (
       <View style={[Styles.WidthUseWindow, {marginTop: 20, alignItems: "center", height: 600}]}>
         <View style={[styles.row, {height:30}]}>
           <TouchableOpacity
-            onPress={this.SignUp}
+            onPress={this.Close}
             style={[{flex: 1}, {justifyContent: "center", marginLeft: 10}]}>
-            <Icon name={"ios-close"} size={30} />
+            <Icon name={"ios-close"} size={30}/>
           </TouchableOpacity>
           <TouchableOpacity onPress={this.SignUp}>
             <View style={[ {justifyContent: "center", marginRight: 10}]}>
@@ -67,29 +69,30 @@ export default class LogInPage extends Component {
         </View>
         <View style={[styles.imageStyle, styles.row]}>
           <Image source={Images.HeadPhoto}
-                 style={styles.headPhoto} />
+                 style={styles.headPhoto}/>
         </View>
         <View
-          style={{height: 20, width: Styles.Width(720) - 40 , borderColor: "#aeaeae", borderBottomWidth: 1, marginTop:30}}>
+          style={{height: 20, width: Styles.Width(720) - 40 , borderColor: Colors.classifyGrey, borderBottomWidth: 1, marginTop:30}}>
           <TextInput
             style={{flex: 1}}
             placeholder={this.state.firstText}
             onChangeText={(firstText) => this.setState({firstText})}
             value={this.state.firstText}
-            clearTextOnFocus={true} />
+            clearTextOnFocus={true}/>
         </View>
         <View
-          style={{height: 20, width: Styles.Width(720) - 40 , borderColor: "#aeaeae", borderBottomWidth: 1, marginTop: 30}}>
+          style={{height: 20, width: Styles.Width(720) - 40 , borderColor: Colors.classifyGrey, borderBottomWidth: 1, marginTop: 30}}>
           <TextInput
             style={{flex: 1}}
             placeholder={this.state.secondText}
             onChangeText={(secondText) => this.setState({secondText})}
             value={this.state.secondText}
             clearTextOnFocus={true}
-            secureTextEntry={true} />
+            secureTextEntry={true}
+            maxLength={12} />
         </View>
         <TouchableOpacity>
-          <View style={styles.buttonStyle}>
+          <View>
             <Button
               title={Strings.Login.ToLogin}
               onClick={this.onLogin} />
@@ -104,7 +107,7 @@ export default class LogInPage extends Component {
           <Text style={{color:"#777777"}}>{Strings.Login.More}</Text>
         </View>
         <TouchableOpacity>
-          <Image source={Images.Wechat} style={{width:40, height:40}} />
+          <Image source={Images.Wechat} style={{width:40, height:40}}/>
         </TouchableOpacity>
       </View>
     );
@@ -117,12 +120,20 @@ export default class LogInPage extends Component {
     })
   };
 
-  SignUp = () => {
+  Close = () => {
     this.props.navigator.pop();
+  };
+
+  SignUp = () => {
+    this.props.navigator.push({
+      name: Config.Navigation.SignUp,
+      component: SignUp
+    })
   }
 }
 
 const styles = {
+  //todo: style
   row: {
     flexDirection: "row"
   },
@@ -134,22 +145,12 @@ const styles = {
     marginTop: 20
   },
 
-  buttonStyle: {
-    marginTop: 20,
-    backgroundColor: "#60b6ff",
-    borderWidth: 1,
-    borderColor: 'white',
-    borderRadius: 20,
-    height: 40,
-    width: Styles.Width(720) - 60
-  },
-
   headPhoto: {
     marginTop: 100,
     height: 100,
     width: 100,
     borderWidth: 1,
-    borderColor: "#efefef",
+    borderColor: "#efefef",  //todo: color
     borderRadius: 50
   }
 };

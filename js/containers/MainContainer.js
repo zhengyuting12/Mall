@@ -26,11 +26,11 @@
 
 import React, {Component} from "react";
 import Main from "../pages/Main";
-
+import SignUp from "../pages/SignUp"
 export default class MainContainer extends Component {
   render() {
     return (
-      <Main {...this.props} />
+      <SignUp {...this.props} />
     );
   }
 }

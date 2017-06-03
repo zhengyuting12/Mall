@@ -69,11 +69,13 @@ export const String = {
     PhoneNumber: "手机号",
     Identify: "验证码",
     UserName: "用户名",
-    Password: "密码",
+    Password: "密码 6-12位 ",
     RePassword: "确认密码",
     Contract: "我已阅读并同意用户协议",
+    Checked: "两次密码不一样哦(σ｀д′)σ",
+    CheckedNum: "请输入正确的手机号码",
     Finish: "完成注册",
-    Abroad: "海外注册请点这里"
+    Wrong: "密码格式错误"
   },
 
   MainLoliName: {
